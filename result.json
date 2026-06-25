@@ -1,0 +1,51 @@
+{
+    "summary": {
+        "total_reviews": 8,
+        "positive": 5,
+        "negative": 2,
+        "neutral": 1,
+        "average_score": 0.287
+    },
+    "results": [
+        {
+            "review": "This product is amazing, I loved it!",
+            "sentiment": "Positive",
+            "score": 0.8398
+        },
+        {
+            "review": "Terrible quality, broke after one day.",
+            "sentiment": "Negative",
+            "score": -0.7096
+        },
+        {
+            "review": "It is okay, nothing special.",
+            "sentiment": "Negative",
+            "score": -0.092
+        },
+        {
+            "review": "I expect better product.",
+            "sentiment": "Positive",
+            "score": 0.4404
+        },
+        {
+            "review": "Satasfied but little expensive.",
+            "sentiment": "Neutral",
+            "score": 0.0
+        },
+        {
+            "review": "Happy!!",
+            "sentiment": "Positive",
+            "score": 0.6467
+        },
+        {
+            "review": "Worth the value.",
+            "sentiment": "Positive",
+            "score": 0.5106
+        },
+        {
+            "review": "Good product and would recommend to all.",
+            "sentiment": "Positive",
+            "score": 0.6597
+        }
+    ]
+}
