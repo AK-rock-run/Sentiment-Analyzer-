@@ -1,93 +1,211 @@
-# Machine Learning Sentiment Analysis
+# Machine Learning Based Sentiment Analysis
 
-## 📌 Description
+## Overview
 
-This project is the final stage of the Sentiment Analysis journey.
+This project implements a sentiment analysis system using Machine Learning. Unlike rule-based approaches, the model learns patterns from labeled data and predicts whether a review expresses a positive or negative sentiment.
 
-Unlike previous approaches, this implementation learns patterns from labelled data using supervised Machine Learning.
-
-The model is trained to classify reviews as Positive, Negative or Neutral.
+The project uses the IMDB movie review dataset, preprocesses the text, converts it into numerical features using TF-IDF Vectorization, trains a Logistic Regression classifier, evaluates its performance, and saves the trained model for future predictions.
 
 ---
 
-## Planned Features
+## Objectives
 
-* Data preprocessing
-* Tokenization
-* Stopword removal
-* Feature extraction
-* Train/Test split
-* Logistic Regression model
-* Model evaluation
-* Prediction on new reviews
+* Understand the complete Machine Learning workflow for text classification.
+* Learn text preprocessing techniques.
+* Convert textual data into numerical feature vectors.
+* Train and evaluate a supervised learning model.
+* Save the trained model for reuse without retraining.
 
 ---
 
-## Technologies
+## Technologies Used
 
 * Python
-* NLTK
 * scikit-learn
-* Pandas
-* NumPy
+* Hugging Face Datasets
+* Joblib
+* Regular Expressions (re)
 
 ---
 
-## Planned Workflow
+## Project Workflow
 
-Dataset
+1. Load the IMDB dataset from Hugging Face.
+2. Extract reviews and sentiment labels.
+3. Clean the review text by:
 
-↓
+   * Removing HTML tags
+   * Converting text to lowercase
+4. Split the dataset into training and testing sets.
+5. Convert text into TF-IDF feature vectors.
+6. Train a Logistic Regression classifier.
+7. Evaluate the model using the test dataset.
+8. Display evaluation metrics.
+9. Save the trained model and TF-IDF vectorizer using Joblib.
+10. Load the saved model and predict the sentiment of new reviews.
 
-Preprocessing
+---
 
-↓
+## Machine Learning Pipeline
 
-Feature Extraction
-
-↓
-
-Model Training
-
-↓
-
+```text
+IMDB Dataset
+      │
+      ▼
+Text Cleaning
+      │
+      ▼
+Train-Test Split
+      │
+      ▼
+TF-IDF Vectorization
+      │
+      ▼
+Logistic Regression Training
+      │
+      ▼
 Model Evaluation
-
-↓
-
-Prediction
+      │
+      ▼
+Save Model (.pkl)
+      │
+      ▼
+Predict Sentiment for New Reviews
+```
 
 ---
 
-## Evaluation Metrics
+## Dataset
+
+The project uses the IMDB Movie Review Dataset available through the Hugging Face Datasets library.
+
+Dataset characteristics:
+
+* 50,000 labeled movie reviews
+* Binary sentiment classification
+* Labels:
+
+  * 0 → Negative
+  * 1 → Positive
+
+The dataset is automatically downloaded when the program is executed.
+
+---
+
+## Model
+
+Algorithm:
+
+* Logistic Regression
+
+Feature Extraction:
+
+* TF-IDF Vectorizer
+
+Training Strategy:
+
+* 80% Training Data
+* 20% Testing Data
+
+---
+
+## Evaluation
+
+The model is evaluated using:
 
 * Accuracy
 * Precision
 * Recall
-* F1 Score
-* Confusion Matrix
+* F1-Score
+* Support
+
+These metrics provide an overall understanding of the classifier's performance on unseen data.
 
 ---
 
-## Expected Improvements
+## Output
 
-Compared to previous versions, this model should:
+The program displays:
 
-* Learn from examples
-* Generalize to unseen reviews
-* Handle larger vocabularies
-* Reduce manual rule creation
+* Model Accuracy
+* Classification Report
+* Predicted Sentiment
+* Prediction Confidence
+
+Example:
+
+```text
+Accuracy: 88.66%
+
+Sentiment  : Positive
+Confidence : 91.82%
+```
 
 ---
 
-## Status
+## Saved Files
 
-🚧 Currently under development.
+After training, the following files are generated:
 
-This folder will be updated as the Machine Learning implementation progresses.
+* `sentiment_model.pkl` – Trained Logistic Regression model.
+* `tfidf_vectorizer.pkl` – Trained TF-IDF vectorizer.
+
+These files are reused for future predictions without retraining the model.
+
+---
+
+## Project Structure
+
+```text
+Machine_Learning/
+│── ml_sentiment.py
+│── requirements.txt
+│── README.md
+│── .gitignore
+```
+
+Generated after training:
+
+```text
+sentiment_model.pkl
+tfidf_vectorizer.pkl
+```
+
+---
+
+## Future Improvements
+
+Possible enhancements include:
+
+* Support for Neutral sentiment classification.
+* Train on social media datasets.
+* Perform sentiment analysis on tweets and product reviews.
+* Experiment with other Machine Learning algorithms such as Naive Bayes, Support Vector Machines, and Random Forest.
+* Improve preprocessing through stopword removal, stemming, and lemmatization.
+* Replace TF-IDF with modern word embeddings or transformer-based models.
+
+---
+
+## Requirements
+
+Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Run the Project
+
+```bash
+python ml_sentiment.py
+```
 
 ---
 
 ## Author
 
 Arya Pradeep Khamayacha
+
+Mini Project – Machine Learning Based Sentiment Analysis
